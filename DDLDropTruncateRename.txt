@@ -1,0 +1,89 @@
+SQL> SET PAGES 150 LINES 150
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+VACCINE                        TABLE                                                                                                                  
+
+SQL> DROP TABLE VACCINE;
+
+Table dropped.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+BIN$DWX4UHuWTXiZHWW3xIBP9Q==$0 TABLE                                                                                                                  
+
+SQL> SHOW RECYCLEBIN;
+ORIGINAL NAME    RECYCLEBIN NAME                OBJECT TYPE  DROP TIME                                                                                
+---------------- ------------------------------ ------------ -------------------                                                                      
+VACCINE          BIN$DWX4UHuWTXiZHWW3xIBP9Q==$0 TABLE        2024-09-02:00:12:00                                                                      
+SQL> FLASHBACK TABLE VACCINE
+  2  TO BEFORE DROP;
+
+Flashback complete.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+VACCINE                        TABLE                                                                                                                  
+
+SQL> SELECT * FROM VACCINE;
+
+no rows selected
+
+SQL> TRUNCATE TABLE VACCINE;
+
+Table truncated.
+
+SQL> RENAME VACCINE TO TIKA;
+
+Table renamed.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+TIKA                           TABLE                                                                                                                  
+
+SQL> DROP TABLE TIKA;
+
+Table dropped.
+
+SQL> SHOW RECYCLEBIN;
+ORIGINAL NAME    RECYCLEBIN NAME                OBJECT TYPE  DROP TIME                                                                                
+---------------- ------------------------------ ------------ -------------------                                                                      
+TIKA             BIN$2U9/jqnvTTmAfvBI05lp8w==$0 TABLE        2024-09-02:00:49:32                                                                      
+SQL> PURGE TABLE TIKA;
+
+Table purged.
+
+SQL> SHOW RECYCLEBIN;
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+
+SQL> SPOOL OFF;

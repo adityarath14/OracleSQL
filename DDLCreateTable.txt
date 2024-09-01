@@ -1,0 +1,25 @@
+SQL> SET PAGES 150 LINES 150
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+
+SQL> CREATE TABLE VACCINE(ID NUMBER(5) PRIMARY KEY,NAME VARCHAR(20) NOT NULL,MF_DATE DATE NOT NULL,COST NUMBER(5),NO_OF_DOSES NUMBER(2));
+
+Table created.
+
+SQL> SELECT * FROM TAB;
+
+TNAME                          TABTYPE  CLUSTERID                                                                                                     
+------------------------------ ------- ----------                                                                                                     
+DEPT                           TABLE                                                                                                                  
+EMP                            TABLE                                                                                                                  
+BONUS                          TABLE                                                                                                                  
+SALGRADE                       TABLE                                                                                                                  
+VACCINE                        TABLE                                                                                                                  
+
+SQL> SPOOL OFF

@@ -1,0 +1,61 @@
+SQL> SET PAGES 150 LINES 150
+SQL> DESC VACCINE;
+ Name                                                                                Null?    Type
+ ----------------------------------------------------------------------------------- -------- --------------------------------------------------------
+ ID                                                                                  NOT NULL NUMBER(5)
+ NAME                                                                                NOT NULL VARCHAR2(20)
+ MF_DATE                                                                             NOT NULL DATE
+ COST                                                                                         NUMBER(5)
+ NO_OF_DOSES                                                                                  NUMBER(2)
+
+SQL> INSERT INTO VACCINE(ID, NAME, MF_DATE, COST, NO_OF_DOSES)
+  2  VALUES(100, 'ADITYA', '14-APR-2021', 500, 3);
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO VACCINE(ID, NAME, MF_DATE, COST, NO_OF_DOSES)
+  2   VALUES(101, 'ABHISHEK', '12-JUL-2022', 450, 2);
+
+1 row created.
+
+SQL> INSERT INTO VACCINE(ID, NAME, MF_DATE, COST, NO_OF_DOSES)
+  2   VALUES(102, 'ANIMESH', '18-FEB-2020', 300, 1);
+
+1 row created.
+
+SQL> INSERT INTO VACCINE(ID, NAME, MF_DATE, COST, NO_OF_DOSES)
+  2   VALUES(103, 'BAIKUNTHA', '26-JUN-2019', 400, 3);
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM VACCINE;
+
+        ID NAME                 MF_DATE         COST NO_OF_DOSES                                                                                      
+---------- -------------------- --------- ---------- -----------                                                                                      
+       100 ADITYA               14-APR-21        500           3                                                                                      
+       101 ABHISHEK             12-JUL-22        450           2                                                                                      
+       102 ANIMESH              18-FEB-20        300           1                                                                                      
+       103 BAIKUNTHA            26-JUN-19        400           3                                                                                      
+
+SQL> DELETE FROM VACCINE WHERE ID=103;
+
+1 row deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM VACCINE;
+
+        ID NAME                 MF_DATE         COST NO_OF_DOSES                                                                                      
+---------- -------------------- --------- ---------- -----------                                                                                      
+       100 ADITYA               14-APR-21        500           3                                                                                      
+       101 ABHISHEK             12-JUL-22        450           2                                                                                      
+       102 ANIMESH              18-FEB-20        300           1                                                                                      
+
+SQL> SPOOL OFF

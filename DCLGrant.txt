@@ -1,0 +1,127 @@
+SQL> SET PAGES 150 LINES 150
+SQL> SELECT * FROM ALL_USERS;
+
+USERNAME                          USER_ID CREATED                                                                                                     
+------------------------------ ---------- ---------                                                                                                   
+BI                                     60 04-MAY-24                                                                                                   
+PM                                     59 04-MAY-24                                                                                                   
+SH                                     58 04-MAY-24                                                                                                   
+IX                                     57 04-MAY-24                                                                                                   
+OE                                     56 04-MAY-24                                                                                                   
+HR                                     55 04-MAY-24                                                                                                   
+SCOTT                                  54 30-AUG-05                                                                                                   
+MGMT_VIEW                              53 30-AUG-05                                                                                                   
+MDDATA                                 50 30-AUG-05                                                                                                   
+SYSMAN                                 51 30-AUG-05                                                                                                   
+MDSYS                                  46 30-AUG-05                                                                                                   
+SI_INFORMTN_SCHEMA                     45 30-AUG-05                                                                                                   
+ORDPLUGINS                             44 30-AUG-05                                                                                                   
+ORDSYS                                 43 30-AUG-05                                                                                                   
+OLAPSYS                                47 30-AUG-05                                                                                                   
+ANONYMOUS                              39 30-AUG-05                                                                                                   
+XDB                                    38 30-AUG-05                                                                                                   
+CTXSYS                                 36 30-AUG-05                                                                                                   
+EXFSYS                                 34 30-AUG-05                                                                                                   
+WMSYS                                  25 30-AUG-05                                                                                                   
+DBSNMP                                 24 30-AUG-05                                                                                                   
+TSMSYS                                 21 30-AUG-05                                                                                                   
+DMSYS                                  35 30-AUG-05                                                                                                   
+DIP                                    19 30-AUG-05                                                                                                   
+OUTLN                                  11 30-AUG-05                                                                                                   
+SYSTEM                                  5 30-AUG-05                                                                                                   
+SYS                                     0 30-AUG-05                                                                                                   
+
+27 rows selected.
+
+SQL> SHOW USER;
+USER is "SCOTT"
+SQL> GRANT INSERT ON DEPT TO HR;
+
+Grant succeeded.
+
+SQL> CONN HR;
+Connected.
+SQL> SHOW USER;
+USER is "HR"
+SQL> SELECT * FROM SCOTT.DEPT;
+SELECT * FROM SCOTT.DEPT
+                    *
+ERROR at line 1:
+ORA-01031: insufficient privileges 
+
+
+SQL> INSERT INTO SCOTT.DEPT
+  2  VALUES(90, 'TESTING', 'BANGALORE');
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> CONN SCOTT;
+Connected.
+SQL> SELECT * FROM DEPT;
+
+    DEPTNO DNAME          LOC                                                                                                                         
+---------- -------------- -------------                                                                                                               
+        90 TESTING        BANGALORE                                                                                                                   
+        10 ACCOUNTING     NEW YORK                                                                                                                    
+        20 RESEARCH       DALLAS                                                                                                                      
+        30 SALES          CHICAGO                                                                                                                     
+        40 OPERATIONS     BOSTON                                                                                                                      
+
+SQL> DELETE FROM DEPT WHERE DEPTNO=90;
+
+1 row deleted.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM DEPT;
+
+    DEPTNO DNAME          LOC                                                                                                                         
+---------- -------------- -------------                                                                                                               
+        10 ACCOUNTING     NEW YORK                                                                                                                    
+        20 RESEARCH       DALLAS                                                                                                                      
+        30 SALES          CHICAGO                                                                                                                     
+        40 OPERATIONS     BOSTON                                                                                                                      
+
+SQL> GRANT UPDATE, SELECT ON EMP TO HR;
+
+Grant succeeded.
+
+SQL> CONN HR;
+Connected.
+SQL> SHOW USER;
+USER is "HR"
+
+
+SQL> SELECT * FROM SCOTT.EMP
+  2  WHERE DEPTNO IN(10,20,30);
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO                                                                 
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------                                                                 
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20                                                                 
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30                                                                 
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30                                                                 
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20                                                                 
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30                                                                 
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30                                                                 
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10                                                                 
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20                                                                 
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10                                                                 
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30                                                                 
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20                                                                 
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30                                                                 
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20                                                                 
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10                                                                 
+
+14 rows selected.
+
+SQL> CONN SCOTT;
+Connected.
+SQL> SHOW USER;
+USER is "SCOTT"
+SQL> SPOOL OFF

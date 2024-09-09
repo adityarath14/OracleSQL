@@ -1,0 +1,88 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT MOD(11,2) FROM DUAL;
+
+ MOD(11,2)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         1                                                                                                                                                                                              
+
+SQL> SELECT MOD (5,5) FROM DUAL;
+
+  MOD(5,5)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         0                                                                                                                                                                                              
+
+SQL> SELECT ABS(-20) FROM DUAL;
+
+  ABS(-20)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        20                                                                                                                                                                                              
+
+SQL> SELECT ABS(-12) FROM DUAL;
+
+  ABS(-12)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        12                                                                                                                                                                                              
+
+SQL> SELECT POWER(5,0) FROM DUAL;
+
+POWER(5,0)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         1                                                                                                                                                                                              
+
+SQL> SELECT POWER (5,2) FROM DUAL;
+
+POWER(5,2)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        25                                                                                                                                                                                              
+
+SQL> SELECT SQRT(169) FROM DUAL;
+
+ SQRT(169)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        13                                                                                                                                                                                              
+
+SQL> SELECT SQRT (200) FROM DUAL;
+
+ SQRT(200)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+14.1421356                                                                                                                                                                                              
+
+SQL> SELECT FLOOR(12.5) FROM DUAL;
+
+FLOOR(12.5)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+         12                                                                                                                                                                                             
+
+SQL> SELECT FLOOR(1.5) FROM DUAL
+  2  ;
+
+FLOOR(1.5)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         1                                                                                                                                                                                              
+
+
+SQL> SELECT CEIL (12.5) FROM DUAL;
+
+CEIL(12.5)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        13                                                                                                                                                                                              
+
+SQL> SELECT CEIL (1.5) FROM DUAL;
+
+ CEIL(1.5)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         2                                                                                                                                                                                              
+
+SQL> SELECT ROUND(13.9) FROM DUAL;
+
+ROUND(13.9)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+         14                                                                                                                                                                                             
+
+SQL> SELECT ROUND(12.2) FROM DUAL;
+
+ROUND(12.2)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+         12                                                                                                                                                                                             
+
+SQL> SPOOL OFF

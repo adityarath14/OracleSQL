@@ -1,0 +1,35 @@
+SQL> SET PAGES 200 LINES 200;
+
+
+
+SQL> SELECT CURRENT_DATE FROM DUAL;
+
+CURRENT_D                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+08-SEP-24                                                                                                                                                                                               
+
+SQL> SELECT SESSIONTIMEZONE FROM DUAL;
+
+SESSIONTIMEZONE                                                                                                                                                                                         
+---------------------------------------------------------------------------                                                                                                                             
++05:30                                                                                                                                                                                                  
+
+SQL> SELECT MONTHS_BETWEEN('29-DEC-24','29-JAN-25')FROM DUAL;
+
+MONTHS_BETWEEN('29-DEC-24','29-JAN-25')                                                                                                                                                                 
+---------------------------------------                                                                                                                                                                 
+                                     -1                                                                                                                                                                 
+
+SQL> SELECT NEXT_DAY('08-SEP-24','SUNDAY')FROM DUAL;
+
+NEXT_DAY(                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+15-SEP-24                                                                                                                                                                                               
+
+SQL> SELECT LAST_DAY('08-SEP-2024') FROM DUAL;
+
+LAST_DAY(                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+30-SEP-24                                                                                                                                                                                               
+
+SQL> SPOOL OFF

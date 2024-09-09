@@ -1,0 +1,87 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT LENGTH('HELLO') FROM DUAL;
+
+LENGTH('HELLO')                                                                                                                                                                                         
+---------------                                                                                                                                                                                         
+              5                                                                                                                                                                                         
+
+SQL> SELECT LENGTH('SQL IS EASY') FROM
+  2  DUAL;
+
+LENGTH('SQLISEASY')                                                                                                                                                                                     
+-------------------                                                                                                                                                                                     
+                 11                                                                                                                                                                                     
+
+SQL> SELECT UPPER('sql') FROM DUAL;
+
+UPP                                                                                                                                                                                                     
+---                                                                                                                                                                                                     
+SQL                                                                                                                                                                                                     
+
+SQL> SELECT LOWER('SQL') FROM DUAL;
+
+LOW                                                                                                                                                                                                     
+---                                                                                                                                                                                                     
+sql                                                                                                                                                                                                     
+
+SQL> SELECT LOWER('WE ARE THE DEVELOPER') FROM DUAL;
+
+LOWER('WEARETHEDEVEL                                                                                                                                                                                    
+--------------------                                                                                                                                                                                    
+we are the developer                                                                                                                                                                                    
+
+SQL> SELECT INITCAP('we are the developer') FROM DUAL;
+
+INITCAP('WEARETHEDEV                                                                                                                                                                                    
+--------------------                                                                                                                                                                                    
+We Are The Developer                                                                                                                                                                                    
+
+SQL> SELECT REVERSE ('HELLO') FROM DUAL;
+
+REVER                                                                                                                                                                                                   
+-----                                                                                                                                                                                                   
+OLLEH                                                                                                                                                                                                   
+
+SQL> SELECT REVERSE ('WELCOME TO JSPIDERS') FROM DUAL;
+
+REVERSE('WELCOMETOJ                                                                                                                                                                                     
+-------------------                                                                                                                                                                                     
+SREDIPSJ OT EMOCLEW                                                                                                                                                                                     
+
+SQL> SELECT REPLACE('I LOVE JAVA','JAVA','PYTHON') FROM DUAL;
+
+REPLACE('ILOV                                                                                                                                                                                           
+-------------                                                                                                                                                                                           
+I LOVE PYTHON                                                                                                                                                                                           
+
+SQL> SELECT REPLACE('DADA','DA') FROM DUAL;
+
+R                                                                                                                                                                                                       
+-                                                                                                                                                                                                       
+                                                                                                                                                                                                        
+
+SQL> select substr('welcome',4,4) from dual;
+
+SUBS                                                                                                                                                                                                    
+----                                                                                                                                                                                                    
+come                                                                                                                                                                                                    
+
+SQL> SELECT SUBSTR('WELCOME',4) FROM DUAL;
+
+SUBS                                                                                                                                                                                                    
+----                                                                                                                                                                                                    
+COME                                                                                                                                                                                                    
+
+SQL> SELECT SUBSTR('DEVELOPERS',1,7) FROM DUAL;
+
+SUBSTR(                                                                                                                                                                                                 
+-------                                                                                                                                                                                                 
+DEVELOP                                                                                                                                                                                                 
+
+SQL> SELECT SUBSTR('GOOD MORNING',6) FROM DUAL;
+
+SUBSTR(                                                                                                                                                                                                 
+-------                                                                                                                                                                                                 
+MORNING                                                                                                                                                                                                 
+
+SQL> SPOOL OFF

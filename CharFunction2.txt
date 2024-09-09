@@ -1,0 +1,131 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT INSTR('Developers','E',1,3)FROM DUAL;
+
+INSTR('DEVELOPERS','E',1,3)                                                                                                                                                                             
+---------------------------                                                                                                                                                                             
+                          0                                                                                                                                                                             
+
+SQL>  SELECT INSTR('DEVELOPERS','E')FROM DUAL;
+
+INSTR('DEVELOPERS','E')                                                                                                                                                                                 
+-----------------------                                                                                                                                                                                 
+                      2                                                                                                                                                                                 
+
+SQL> SELECT ASCII('A') FROM DUAL;
+
+ASCII('A')                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        65                                                                                                                                                                                              
+
+SQL> SELECT ASCII('a')FROM DUAL;
+
+ASCII('A')                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        97                                                                                                                                                                                              
+
+SQL> SELECT ASCII('@')FROM DUAL;
+
+ASCII('@')                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        64                                                                                                                                                                                              
+
+SQL> SELECT CONCAT('SQL','PLUS')FROM DUAL;
+
+CONCAT(                                                                                                                                                                                                 
+-------                                                                                                                                                                                                 
+SQLPLUS                                                                                                                                                                                                 
+
+SQL> SELECT CONCAT(JOB,COMM)FROM EMP;
+
+CONCAT(JOB,COMM)                                                                                                                                                                                        
+-------------------------------------------------                                                                                                                                                       
+CLERK                                                                                                                                                                                                   
+SALESMAN300                                                                                                                                                                                             
+SALESMAN500                                                                                                                                                                                             
+MANAGER                                                                                                                                                                                                 
+SALESMAN1400                                                                                                                                                                                            
+MANAGER                                                                                                                                                                                                 
+MANAGER                                                                                                                                                                                                 
+ANALYST                                                                                                                                                                                                 
+PRESIDENT                                                                                                                                                                                               
+SALESMAN0                                                                                                                                                                                               
+CLERK                                                                                                                                                                                                   
+CLERK                                                                                                                                                                                                   
+ANALYST                                                                                                                                                                                                 
+CLERK                                                                                                                                                                                                   
+
+14 rows selected.
+
+SQL> SELECT TRIM('  HELLO  ')FROM DUAL;
+
+TRIM(                                                                                                                                                                                                   
+-----                                                                                                                                                                                                   
+HELLO                                                                                                                                                                                                   
+
+SQL> SELECT TRIM('HELLO')FROM DUAL;
+
+TRIM(                                                                                                                                                                                                   
+-----                                                                                                                                                                                                   
+HELLO                                                                                                                                                                                                   
+
+SQL> SELECT TRANSLATE('DEVELOPERS','VE','VA')FROM DUAL;
+
+TRANSLATE(                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+DAVALOPARS                                                                                                                                                                                              
+
+SQL> SELECT COMM,NVL(COMM,800)FROM EMP;
+
+      COMM NVL(COMM,800)                                                                                                                                                                                
+---------- -------------                                                                                                                                                                                
+                     800                                                                                                                                                                                
+       300           300                                                                                                                                                                                
+       500           500                                                                                                                                                                                
+                     800                                                                                                                                                                                
+      1400          1400                                                                                                                                                                                
+                     800                                                                                                                                                                                
+                     800                                                                                                                                                                                
+                     800                                                                                                                                                                                
+                     800                                                                                                                                                                                
+         0             0                                                                                                                                                                                
+                     800                                                                                                                                                                                
+                     800                                                                                                                                                                                
+                     800                                                                                                                                                                                
+                     800                                                                                                                                                                                
+
+14 rows selected.
+
+SQL> SELECT COMM,NVL2(COMM,800,1000)FROM EMP;
+
+      COMM NVL2(COMM,800,1000)                                                                                                                                                                          
+---------- -------------------                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+       300                 800                                                                                                                                                                          
+       500                 800                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+      1400                 800                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+         0                 800                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+                          1000                                                                                                                                                                          
+
+14 rows selected.
+
+SQL> SELECT LPAD('SMITH',10,'HELLO')FROM DUAL;
+
+LPAD('SMIT                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+HELLOSMITH                                                                                                                                                                                              
+
+SQL> SELECT RPAD('SQL',12,'IS EASY')FROM DUAL;
+
+RPAD('SQL',1                                                                                                                                                                                            
+------------                                                                                                                                                                                            
+SQLIS EASYIS                                                                                                                                                                                            
+
+SQL> SPOOL OFF;

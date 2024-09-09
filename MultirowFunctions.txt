@@ -1,0 +1,44 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT MAX(SAL)FROM EMP;
+
+  MAX(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      5000                                                                                                                                                                                              
+
+SQL> SELECT MAX(HIREDATE)FROM EMP;
+
+MAX(HIRED                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+23-MAY-87                                                                                                                                                                                               
+
+SQL> SELECT MIN(SAL)FROM EMP WHERE JOB='SALESMAN';
+
+  MIN(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      1250                                                                                                                                                                                              
+
+SQL> SELECT MIN(HIREDATE)FROM EMP;
+
+MIN(HIRED                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+17-DEC-80                                                                                                                                                                                               
+
+SQL> SELECT AVG(COMM)FROM EMP WHERE DEPTNO=30;
+
+ AVG(COMM)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+       550                                                                                                                                                                                              
+
+SQL> SELECT SUM(SAL)FROM EMP WHERE JOB='MANAGER';
+
+  SUM(SAL)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+      8275                                                                                                                                                                                              
+
+SQL> SELECT COUNT(COMM)FROM EMP;
+
+COUNT(COMM)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+          4                                                                                                                                                                                             
+
+SQL> SPOOL OFF

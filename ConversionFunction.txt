@@ -1,0 +1,26 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT TO_DATE('2024-MAY-24','YYYY-MM-DD')FROM DUAL;
+
+TO_DATE('                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+24-MAY-24                                                                                                                                                                                               
+
+SQL> SELECT TO_DATE('24/MAY/24','YY/MM/DD')FROM DUAL;
+
+TO_DATE('                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+24-MAY-24                                                                                                                                                                                               
+
+SQL> SELECT TO_DATE('24/MAY/30','YY/MM/DD')FROM DUAL;
+
+TO_DATE('                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+30-MAY-24                                                                                                                                                                                               
+
+SQL> SELECT TO_CHAR(CURRENT_DATE,'YYYY-MM-DD')FROM DUAL;
+
+TO_CHAR(CU                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+2024-09-09                                                                                                                                                                                              
+
+SQL> SPOOL OFF

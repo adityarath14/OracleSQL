@@ -1,0 +1,22 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT A.ENAME,B.ENAME FROM EMP A,EMP B WHERE A.EMPNO=B.MGR;
+
+ENAME      ENAME                                                                                                                                                                                        
+---------- ----------                                                                                                                                                                                   
+FORD       SMITH                                                                                                                                                                                        
+BLAKE      ALLEN                                                                                                                                                                                        
+BLAKE      WARD                                                                                                                                                                                         
+KING       JONES                                                                                                                                                                                        
+BLAKE      MARTIN                                                                                                                                                                                       
+KING       BLAKE                                                                                                                                                                                        
+KING       CLARK                                                                                                                                                                                        
+JONES      SCOTT                                                                                                                                                                                        
+BLAKE      TURNER                                                                                                                                                                                       
+SCOTT      ADAMS                                                                                                                                                                                        
+BLAKE      JAMES                                                                                                                                                                                        
+JONES      FORD                                                                                                                                                                                         
+CLARK      MILLER                                                                                                                                                                                       
+
+13 rows selected.
+
+SQL> SPOOL OFF

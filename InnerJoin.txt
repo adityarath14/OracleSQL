@@ -1,0 +1,19 @@
+SQL> SET PAGES 200 LINES 200
+SQL> SELECT E.*,D.* FROM EMP E INNER JOIN DEPT D ON E.ENAME LIKE '%E%' AND D.DNAME LIKE '%E%' AND E.DEPTNO=D.DEPTNO;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO     DEPTNO DNAME          LOC                                                                                     
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ---------- -------------- -------------                                                                           
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30         30 SALES          CHICAGO                                                                                 
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20         20 RESEARCH       DALLAS                                                                                  
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30         30 SALES          CHICAGO                                                                                 
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30         30 SALES          CHICAGO                                                                                 
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         30 SALES          CHICAGO                                                                                 
+
+SQL> SELECT E.ENAME,E.HIREDATE,D.LOC FROM EMP E INNER JOIN DEPT D ON E.JOB='ANALYST' AND E.SAL>800 AND E.COMM IS NULL AND E.DEPTNO=D.DEPTNO;
+
+ENAME      HIREDATE  LOC                                                                                                                                                                                
+---------- --------- -------------                                                                                                                                                                      
+SCOTT      19-APR-87 DALLAS                                                                                                                                                                             
+FORD       03-DEC-81 DALLAS                                                                                                                                                                             
+
+SQL> SPOOL OFF
